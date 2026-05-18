@@ -1,0 +1,556 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aiTi - Sistema de Gestión Integral de Infraestructura IT</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <meta name="description" content="aiTi - Plataforma profesional para gestión integral de infraestructura IT: inventario de equipos, backups automáticos, terminal SSH, servicios de internet, tareas y administración. 100% on-premise, multi-área.">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <!-- TODO: Reemplazar G-XXXXXXXXXX con tu ID de medición real -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#hero">
+                <img src="img/logo_aiti_icon.svg" alt="aiTi" width="40" height="40" class="me-2" style="vertical-align: middle;">aiTi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fs-5" href="#funcionalidades">Funcionalidades</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="#beneficios">Beneficios</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="#requisitos">Requisitos</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="#descarga">Descarga</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section d-flex align-items-center" id="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-white mb-3">
+                        Gestión Integral de<br>Infraestructura IT
+                    </h1>
+                    <p class="lead text-white-50 mb-4">
+                        Inventario de equipos, backups automáticos, terminal SSH, servicios de internet, 
+                        gestión administrativa y mucho más. Una plataforma multi-área, segura y 100% on-premise.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#descarga" class="btn btn-light btn-lg px-4">
+                            <i class="bi bi-download me-2"></i>Descargar Trial
+                        </a>
+                        <a href="#funcionalidades" class="btn btn-outline-light btn-lg px-4">
+                            Conocer más
+                        </a>
+                    </div>
+                    <p class="text-white-50 mt-3 small">
+                        <i class="bi bi-clock me-1"></i>30 días de evaluación gratuita · Sin tarjeta de crédito
+                    </p>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block text-center">
+                    <div class="hero-mockup">
+                        <div class="mockup-window">
+                            <div class="mockup-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-sidebar"></div>
+                                <div class="mockup-content">
+                                    <div class="mockup-card"></div>
+                                    <div class="mockup-card"></div>
+                                    <div class="mockup-table"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionalidades -->
+    <section class="py-5" id="funcionalidades">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Funcionalidades Principales</h2>
+                <p class="text-muted">Todo lo que necesitás para gestionar tu infraestructura IT en un solo lugar</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('dashboard')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-speedometer2"></i></div>
+                        <h5>Dashboard Inteligente</h5>
+                        <p class="text-muted">Panel con KPIs en tiempo real, gráficos de distribución, alertas y widgets personalizables por usuario.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('inventario')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-router"></i></div>
+                        <h5>Inventario de Equipos</h5>
+                        <p class="text-muted">Gestión completa de routers, switches, firewalls, APs y más. Filtros avanzados, exportación y códigos QR.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('backups')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-cloud-download"></i></div>
+                        <h5>Backups Automáticos</h5>
+                        <p class="text-muted">Respaldo automático de configuraciones via SSH/Telnet. Mapa de calor de backups y comparación visual de cambios.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('terminal')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-terminal"></i></div>
+                        <h5>Terminal SSH/Telnet</h5>
+                        <p class="text-muted">Conexión directa a equipos desde el navegador. Multipaste, snippets, vista grilla y historial de sesiones.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('sitios')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-building"></i></div>
+                        <h5>Gestión de Sitios y Mudanzas</h5>
+                        <p class="text-muted">Organice equipos por ubicación. Mudanzas de uno a uno o masivas entre sitios con checklist, trazabilidad y archivo histórico.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('stock')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-box-seam"></i></div>
+                        <h5>Control de Stock y Asignación</h5>
+                        <p class="text-muted">Inventario con estados (operativo, stock, mantenimiento, baja). Asignación de equipos a personas con trazabilidad completa.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('diff')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-file-diff"></i></div>
+                        <h5>Comparación de Configuraciones</h5>
+                        <p class="text-muted">Compare versiones de backup lado a lado con diff visual. Detecte cambios en la configuración de red al instante.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('redes')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-hdd-network"></i></div>
+                        <h5>Control de Redes y Subredes</h5>
+                        <p class="text-muted">Control absoluto del direccionamiento IP. Detección automática de redes/subredes por sitio con validación de duplicidad. Imposible asignar IPs repetidas o superponer rangos.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('vpn')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-diagram-3"></i></div>
+                        <h5>VPN y Conectividad</h5>
+                        <p class="text-muted">Gestión de túneles VPN bidireccionales. Vista de mapa con conexiones entre sitios y equipos.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('tareas')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-check2-square"></i></div>
+                        <h5>Tareas y Seguimiento</h5>
+                        <p class="text-muted">Tareas generales y por sitio. Asignación a usuarios, prioridades, vencimientos, comentarios y archivos adjuntos.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('reportes')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-bar-chart-line"></i></div>
+                        <h5>Estadísticas y Reportes</h5>
+                        <p class="text-muted">Reportes en PDF y Excel. Reportes programados automáticos por email. Estadísticas de backups, inventario y tareas.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('servicios')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-globe2"></i></div>
+                        <h5>Servicios de Internet</h5>
+                        <p class="text-muted">Gestión de contratos ISP, proveedores, velocidades, pagos y vencimientos. Dashboard analítico de servicios.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('administrativo')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-briefcase"></i></div>
+                        <h5>Gestión Administrativa</h5>
+                        <p class="text-muted">Órdenes de compra, licitaciones, proveedores y licencias de software. Trazabilidad completa de adquisiciones.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('auditoria')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+                        <h5>Auditoría y Seguridad</h5>
+                        <p class="text-muted">Registro de todas las acciones. Roles y permisos, bloqueo por intentos fallidos, sesiones activas.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('credenciales')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-key"></i></div>
+                        <h5>Credenciales Seguras</h5>
+                        <p class="text-muted">Credenciales SSH encriptadas AES-128 con herencia en cascada: Tipo → Marca → Modelo → Equipo.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('importacion')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-file-earmark-excel"></i></div>
+                        <h5>Importación Masiva</h5>
+                        <p class="text-muted">Importe equipos y sitios desde Excel. Validación previa de datos y reporte de errores detallado.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('email')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-envelope"></i></div>
+                        <h5>Notificaciones por Email</h5>
+                        <p class="text-muted">Alertas de backups, vencimientos de certificados, licencias y contratos. Reportes programados automáticos.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('calendario')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-calendar3"></i></div>
+                        <h5>Calendario</h5>
+                        <p class="text-muted">Vista mensual de eventos, vencimientos de licencias, certificados SSL, contratos y tareas con fecha límite.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('biblioteca')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-journal-richtext"></i></div>
+                        <h5>Biblioteca Técnica</h5>
+                        <p class="text-muted">Repositorio centralizado de documentación técnica, manuales, firmwares y archivos asociados a equipos y modelos.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('multiarea')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-diagram-3"></i></div>
+                        <h5>Multi-Área (Grupos)</h5>
+                        <p class="text-muted">Aislamiento por áreas: Redes, Telefonía, Soporte, etc. Cada grupo ve solo sus equipos con features independientes.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('firmware')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-cpu"></i></div>
+                        <h5>Firmware y Automatizaciones</h5>
+                        <p class="text-muted">Control de versiones de firmware por modelo. Ejecución masiva de comandos en equipos con filtros avanzados.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card" data-bs-toggle="modal" data-bs-target="#featureModal" onclick="showFeature('mapa')" style="cursor:pointer;">
+                        <div class="feature-icon"><i class="bi bi-map"></i></div>
+                        <h5>Mapa Interactivo</h5>
+                        <p class="text-muted">Visualice sus sitios en un mapa con mapa de calor de equipos y backups. Geocodificación automática de direcciones.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de capturas por funcionalidad -->
+    <div class="modal fade" id="featureModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="featureModalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="featureModalBody">
+                    <div class="text-center text-muted py-5">
+                        <i class="bi bi-images fs-1 d-block mb-3"></i>
+                        <p>Capturas de pantalla próximamente.</p>
+                        <p class="small">Descargue la versión de evaluación para ver el sistema en funcionamiento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Áreas de IT -->
+    <section class="py-5 text-center" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <h2 class="fw-bold mb-3"><i class="bi bi-diagram-3 me-2"></i>Una plataforma, todas las áreas</h2>
+            <p class="text-muted mb-4">Cada área de IT opera de forma independiente con sus propios equipos, usuarios y módulos habilitados.</p>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <i class="bi bi-router fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">Redes</h6>
+                        <p class="text-muted small mb-0">Routers, switches, firewalls, APs. Backup SSH, terminal, VPN y automatizaciones.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <i class="bi bi-telephone fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">Telefonía</h6>
+                        <p class="text-muted small mb-0">Centrales PBX, teléfonos IP, gateways VoIP. Inventario y gestión por sitio.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <i class="bi bi-pc-display fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">Soporte IT</h6>
+                        <p class="text-muted small mb-0">PCs, notebooks, impresoras, periféricos. Control de stock y asignación a personas.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <i class="bi bi-hdd-rack fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">Infraestructura</h6>
+                        <p class="text-muted small mb-0">Servidores, NAS, UPS, storage. Gestión centralizada con aislamiento por grupo.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-muted mt-4 small">
+                <i class="bi bi-puzzle me-1"></i>Cada área es un Grupo con features independientes. Contrate solo lo que necesita.
+            </p>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="py-5 bg-light" id="beneficios">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">¿Por qué aiTi?</h2>
+                <p class="text-muted">Diferenciadores que importan</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card text-center">
+                        <i class="bi bi-hdd-network fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">100% On-Premise</h6>
+                        <p class="text-muted small">Sus datos nunca salen de su servidor. Sin dependencias de nube ni telemetría.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card text-center">
+                        <i class="bi bi-shield-exclamation fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">Cero Duplicidad de Redes</h6>
+                        <p class="text-muted small">Validación estricta de IPs y subredes. Imposible asignar direcciones duplicadas o superponer rangos entre sitios.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card text-center">
+                        <i class="bi bi-lightning fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">Acceso Directo a LAN</h6>
+                        <p class="text-muted small">SSH, Telnet, Ping, TFTP y FTP directo a sus equipos. Sin agentes ni configuraciones complejas.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card text-center">
+                        <i class="bi bi-lock fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">Seguridad Total</h6>
+                        <p class="text-muted small">Credenciales encriptadas AES-128. HTTPS obligatorio. Auditoría completa.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card text-center">
+                        <i class="bi bi-gear fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">Instalación Simple</h6>
+                        <p class="text-muted small">Un instalador, 5 minutos. Sin Docker, sin dependencias externas. Funciona desde el día 1.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card text-center">
+                        <i class="bi bi-people fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">Multi-Área</h6>
+                        <p class="text-muted small">Cada equipo de trabajo opera aislado con sus propios equipos, usuarios y módulos. Sin interferencias.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-card text-center">
+                        <i class="bi bi-file-earmark-pdf fs-1 text-primary mb-3 d-block"></i>
+                        <h6 class="fw-bold">Reportes Profesionales</h6>
+                        <p class="text-muted small">Exportación a PDF y Excel con logo corporativo. Reportes programados automáticos por email.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requisitos -->
+    <section class="py-5" id="requisitos">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Requisitos del Sistema</h2>
+                <p class="text-muted">Lo mínimo que necesita su servidor</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Componente</th>
+                                    <th>Mínimo</th>
+                                    <th>Recomendado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="bi bi-windows me-2"></i>Sistema Operativo</td>
+                                    <td>Windows 10 Pro 64-bit</td>
+                                    <td>Windows Server 2022</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-memory me-2"></i>RAM</td>
+                                    <td>4 GB</td>
+                                    <td>8 GB</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-hdd me-2"></i>Disco</td>
+                                    <td>20 GB libres</td>
+                                    <td>50 GB SSD</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-cpu me-2"></i>Procesador</td>
+                                    <td>2 cores</td>
+                                    <td>4 cores</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-ethernet me-2"></i>Red</td>
+                                    <td>Acceso LAN</td>
+                                    <td>1 Gbps LAN</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-muted text-center small mt-3">
+                        No requiere Docker, Python, Java ni ningún software adicional. Todo está incluido en el instalador.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Descarga -->
+    <section class="py-5 bg-light" id="descarga">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Descargar Versión de Evaluación</h2>
+                <p class="text-muted">30 días gratis · Todas las funcionalidades · Sin compromiso</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="download-card">
+                        <form id="downloadForm">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre completo <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="dl_nombre" required placeholder="Su nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Empresa / Organización <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="dl_empresa" required placeholder="Nombre de su empresa">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email corporativo <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="dl_email" required placeholder="correo@empresa.com">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Cantidad aproximada de equipos a gestionar</label>
+                                <select class="form-select" id="dl_equipos">
+                                    <option value="">Seleccione...</option>
+                                    <option value="1-50">1 a 50</option>
+                                    <option value="51-200">51 a 200</option>
+                                    <option value="201-500">201 a 500</option>
+                                    <option value="501-1000">501 a 1000</option>
+                                    <option value="1000+">Más de 1000</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100" id="downloadBtn">
+                                <i class="bi bi-download me-2"></i>Descargar aiTi (Trial 30 días)
+                            </button>
+                            <p class="text-muted text-center small mt-3 mb-0">
+                                <i class="bi bi-shield-check me-1"></i>Sus datos no se comparten con terceros.
+                                Solo los usamos para contactarlo sobre el producto.
+                            </p>
+                        </form>
+                        <div id="downloadSuccess" class="text-center py-4" style="display:none;">
+                            <i class="bi bi-check-circle text-success fs-1 d-block mb-3"></i>
+                            <h5>¡Descarga iniciada!</h5>
+                            <p class="text-muted">Si la descarga no comenzó automáticamente, haga clic abajo:</p>
+                            <a href="#" id="downloadLink" class="btn btn-outline-primary">
+                                <i class="bi bi-download me-1"></i>Descargar manualmente
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="py-5" id="contacto">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Contacto</h2>
+                <p class="text-muted">¿Tiene preguntas? Estamos para ayudarlo</p>
+            </div>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-envelope fs-1 text-primary d-block mb-3"></i>
+                    <h6 class="fw-bold">Email</h6>
+                    <a href="mailto:info@aiTi.com.ar" class="text-decoration-none">info@aiTi.com.ar</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-globe fs-1 text-primary d-block mb-3"></i>
+                    <h6 class="fw-bold">Web</h6>
+                    <a href="https://aiTi.com.ar" class="text-decoration-none">aiTi.com.ar</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-geo-alt fs-1 text-primary d-block mb-3"></i>
+                    <h6 class="fw-bold">Ubicación</h6>
+                    <p class="text-muted mb-0">Argentina</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <p class="mb-1"><img src="img/logo_aiti_icon.svg" alt="" width="18" height="18" class="me-1"><strong class="text-white">aiTi</strong> — Sistema de Gestión Integral de Infraestructura IT</p>
+            <p class="mb-0 small">© 2026 aiTi Software. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
